@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Pragprog Books Online Store</title>
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+</head>
+
+<body id="columns" >
+<div id="banner" >
+
+
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "Pragmatic Bookshelf" %>
+
+
+</div>
+<div id="columns" >
+  <div id="side" >
+    <div id="cart" >
+
+      <%= render @cart %>
+    </div>
+
+    <a href="http://localhost:3000/" >Home</a><br />
+    <a href="http://localhost:3000/carts" >New carts</a><br />
+    <a href="http://localhost:3000/products/new" >New Product </a><br />
+    <a href="http://www..../contact" >Others </a><br />
+
+
+  </div>
+
+
+  <div id="main" >
+    <%= yield %>
+
+
+  </div>
+
+</div>
+
+</body>
+
+</html>

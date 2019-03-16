@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %>
+<%= link_to 'Editar', edit_cart_path(@cart) %> |
+<%= link_to 'Regresar', carts_path %>
+
+<h2> Tus articulos </h2>
+
+
+
+<ul>
+  <div class="cart_title" >Your Cart</div>
+
+
+</ul>
+
+
+<table>
+
+  <%= render(@cart.line_items) %>
+
+  <tr class="total_line" >
+    <td colspan="2" >Total</td>
+    <td class="total_cell" ><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+</table>
+
+
+<%= button_to 'Empty cart', @cart, :method => :delete,
+              :confirm => 'Are you sure?' %>
