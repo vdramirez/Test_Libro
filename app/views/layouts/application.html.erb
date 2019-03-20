@@ -21,13 +21,16 @@
   <div id="side" >
     <div id="cart" >
 
-      <%= render @cart %>
+
+
+      <%= render @cart if @cart %>
+
     </div>
 
-    <a href="http://localhost:3000/" >Home</a><br />
-    <a href="http://localhost:3000/carts" >New carts</a><br />
-    <a href="http://localhost:3000/products/new" >New Product </a><br />
-    <a href="http://www..../contact" >Others </a><br />
+    <a href="/" >Home</a><br />
+    <a href="/carts" >New carts</a><br />
+    <a href="/products/new" >New Product </a><br />
+    <a href="http://localhost:3000/orders" >Orders</a><br />
 
 
   </div>
@@ -44,3 +47,4 @@
 </body>
 
 </html>
+

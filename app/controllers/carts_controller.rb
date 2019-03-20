@@ -4,6 +4,7 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
+
     @carts = Cart.all
   end
 
@@ -11,6 +12,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     begin
+
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid cart # {params[:id]}"
