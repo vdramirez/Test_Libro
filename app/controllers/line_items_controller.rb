@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  skip_before_filter :authorize, :only => [:new, :create]
+
 
   def create
     @cart = current_cart

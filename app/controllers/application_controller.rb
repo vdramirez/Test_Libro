@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
 
 
+
+
   protect_from_forgery
   private
   def current_cart
@@ -16,4 +18,7 @@ class ApplicationController < ActionController::Base
       redirect_to login_url, :notice => "Please log in"
     end
   end
+
+
+
 end

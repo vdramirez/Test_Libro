@@ -2,6 +2,10 @@ require 'digest/sha2'
 
 
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   validates :name, :presence => true, :uniqueness => true
 
   validates :password, :confirmation => true
@@ -50,16 +54,6 @@ class User < ApplicationRecord
 end
 
 
-
-
-  def password=(password)
-    @password = password
-
-    if password.present?
-      generate_salt
-      self.hashed_password = self.class.encrypt_password(password, salt)
-    end
-  end
 
   def User.authenticate(name, password)
     if user = find_by_name(name)
