@@ -34,6 +34,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1/edit
   def edit
+
   end
 
   # POST /carts
@@ -54,9 +55,15 @@ class CartsController < ApplicationController
 
   # PATCH/PUT /carts/1
   # PATCH/PUT /carts/1.json
+
+
+
   def update
+
+
+
     respond_to do |format|
-      if @cart.update(cart_params)
+      if @cart.update(@cart_params)
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
         format.json { render :show, status: :ok, location: @cart }
       else

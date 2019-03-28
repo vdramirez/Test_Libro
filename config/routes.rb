@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :orders
-  resources :ordes
+
   resources :carts
   get 'store/index'
   resources :products
